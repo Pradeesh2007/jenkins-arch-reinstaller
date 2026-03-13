@@ -26,6 +26,7 @@ The script performs a **full cleanup and fresh installation**, then automaticall
 
 * Arch Linux
 * BlackArch Linux
+* Other Arch flavours
 
 ---
 
