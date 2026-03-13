@@ -32,6 +32,12 @@ The script performs a **full cleanup and fresh installation**, then automaticall
 
 ## Installation
 
+Update first:
+
+```bash
+sudo pacman -Syu
+```
+
 Clone the repository:
 
 ```bash
