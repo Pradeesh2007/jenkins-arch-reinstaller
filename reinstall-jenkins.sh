@@ -26,7 +26,12 @@ else
 	exit 1
 fi
 sudo systemctl stop jenkins >/dev/null && echo -e "${GREEN}[+] Stopped Jenkins services successfully${NC}"
+read -p "This will delete ALL Jenkins data. Continue? (y/N): " confirm
 
+if [[ "$confirm" != "y" && "$confirm" != "Y" ]]; then
+    echo "Aborted."
+    exit 1
+fi
 sudo pacman -Rns jenkins --noconfirm > /dev/null && echo -e "${GREEN}[+] Jenkins removed successfully${NC}"
 
 sudo rm -rf /var/lib/jenkins /var/log/jenkins /var/cache/jenkins  && echo -e "${GREEN}[+] Jenkins Data folders removed successfully${NC}"
